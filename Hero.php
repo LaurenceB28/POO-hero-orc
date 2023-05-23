@@ -17,9 +17,8 @@ class Hero extends Character{
         parent::__construct($health,$rage);
     }
     
-    
-//exo5//
-        public function getWeapon(): string {
+    //exo5//
+    public function getWeapon(): string {
 		return $this->_weapon;
 	}
 
@@ -34,14 +33,9 @@ class Hero extends Character{
     public function setWeaponDamage(int $weaponDamage): void {
 		$this->_weaponDamage = $weaponDamage;
 	}
-    /**
-     * Summary of getShield
-     * @return string
-     */
 	public function getShield(): string {
 		return $this->_shield;
 	}
-
     public function setShield(string $shield): void{
 		$this->_shield = $shield;
 	}
@@ -62,18 +56,23 @@ class Hero extends Character{
     }
 
 //exo7//
-/**
- * Summary of attacked
- * @param mixed $hero
- * @return void
- */
-// public function attacked($hero){
-//     if($hero instanceof Hero)
-//     ($hero->getDamage() - $this->_shieldValue > 0){
-//         $this->setHealth ($this->_health - ($hero->getDamage() - $this->_shieldValue));
-//         }
-//     }
+
+
+
+
+public function attacked(int $damage){
+    if($this->_shieldValue > 0){
+    $this->_health = $this->_health  - ($damage - $this->_shieldValue);
+    $this->_shieldValue = $this->_shieldValue - $damage;
+    }else{
+        $this->_shieldValue = 0;
+        $this-> _health = $this-> _health - $damage;
+
+    }
+    $this-> _rage += 30;
+    }
 }
-$hero = new Character('swore',1,'shield',1,100,50);
+
+$hero = new Character('épée',1);
 echo $hero;
 ?>
