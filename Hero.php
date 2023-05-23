@@ -34,6 +34,10 @@ class Hero extends Character{
     public function setWeaponDamage(int $weaponDamage): void {
 		$this->_weaponDamage = $weaponDamage;
 	}
+    /**
+     * Summary of getShield
+     * @return string
+     */
 	public function getShield(): string {
 		return $this->_shield;
 	}
@@ -63,16 +67,13 @@ class Hero extends Character{
  * @param mixed $hero
  * @return void
  */
-public function attacked($hero){
-    if($hero->getDamage() - $this->_shieldValue > 0){
-        $this->setHealth ($this->_shield - ($hero->getDamage() - $this->_shieldValue));
-    }else{
-
-    }
+// public function attacked($hero){
+//     if($hero instanceof Hero)
+//     ($hero->getDamage() - $this->_shieldValue > 0){
+//         $this->setHealth ($this->_health - ($hero->getDamage() - $this->_shieldValue));
+//         }
+//     }
 }
-
-}
-
 $hero = new Character('swore',1,'shield',1,100,50);
 echo $hero;
 ?>
