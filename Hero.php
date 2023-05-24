@@ -22,7 +22,12 @@ class Hero extends Character{
 		return $this->_weapon;
 	}
 
-    public function setWeapon(string $weapon): void {
+          /**
+           * Summary of setWeapon
+           * @param mixed $weapon
+           * @return void
+           */
+    public function setWeapon(string $weapon) : void{
 		$this->_weapon = $weapon;
 	}
 
@@ -56,10 +61,6 @@ class Hero extends Character{
     }
 
 //exo7//
-
-
-
-
 public function attacked(int $damage){
     if($this->_shieldValue > 0){
     $this->_health = $this->_health  - ($damage - $this->_shieldValue);
@@ -73,6 +74,5 @@ public function attacked(int $damage){
     }
 }
 
-$hero = new Character('épée',1);
-echo $hero;
-?>
+$hero = new hero(100,50,'épée',30,'bouclier',30);
+var_dump($hero);

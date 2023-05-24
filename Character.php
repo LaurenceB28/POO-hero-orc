@@ -18,6 +18,11 @@ class Character{
         $this->_rage = $rage;
     }
 //exo3//
+    /**
+     * Summary of __construct
+     * @param mixed $health
+     * @param mixed $rage
+     */
     public function __construct(int $health, int $rage){
         $this->_health = $health;
         $this->_rage = $rage;
