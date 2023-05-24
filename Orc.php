@@ -26,13 +26,16 @@ class Orc extends Character{
 	public function setDamage(int $damage){
 		$this->_damage = $damage;
 	}
-	public function attack(){
-		$this->$damage random_int(600, 800);
-		if ($hero instanceof Hero) {
-            $hero->attacked($this);
-        }
-	}	
-}
+	public function attack(): int{
+		return $this->_damage = rand(1600,800);
+	}
 
-$orc = new orc(100, 50, 60);
-var_dump($orc);
+	/**
+	 * Summary of __toString
+	 * @return string
+	 */
+	public function __toString() : string{
+		return 'orc, niveau de vie: ' . $this->_health;
+	}
+
+}

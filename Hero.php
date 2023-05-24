@@ -8,7 +8,7 @@ class Hero extends Character{
     private int $_shieldValue;
 
     //exo6//
-    public function __construct($health, $rage, $weapon, $weaponDamage, $shield, $shieldValue)
+    public function __construct($health = 100, $rage= 50, $weapon = 'épée', $weaponDamage=50, $shield='bouclier', $shieldValue = 40)
     {
         $this-> _weapon = $weapon;
         $this-> _weaponDamage = $weaponDamage;
@@ -22,7 +22,7 @@ class Hero extends Character{
 		return $this->_weapon;
 	}
 
-          /**
+        /**
            * Summary of setWeapon
            * @param mixed $weapon
            * @return void
@@ -68,11 +68,19 @@ public function attacked(int $damage){
     }else{
         $this->_shieldValue = 0;
         $this-> _health = $this-> _health - $damage;
-
     }
     $this-> _rage += 30;
     }
-}
 
-$hero = new hero(100,50,'épée',30,'bouclier',30);
-var_dump($hero);
+    public function attack($value) {
+    if($this->getShieldValue()>0){
+        $real = $value-$this->getShieldValue();
+        $this->setHealth($this->getHealth()-$real);
+        $this->setShieldValue($this->getShieldValue()-$value);
+    }else{
+        $this->setHealth($this->getHealth()-$value);
+    // }else($hero->getRage () + 100){
+    // $hero->attacked();
+}
+    }
+}

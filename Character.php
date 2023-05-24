@@ -24,8 +24,8 @@ class Character{
      * @param mixed $rage
      */
     public function __construct(int $health, int $rage){
-        $this->_health = $health;
-        $this->_rage = $rage;
+        // $this->_health = $health;
+        // $this->_rage = $rage;
         //OU//
         $this->setHealth($health);
         $this->setRage($rage);
